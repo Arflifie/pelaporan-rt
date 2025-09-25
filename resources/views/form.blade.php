@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
