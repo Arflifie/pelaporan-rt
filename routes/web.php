@@ -9,3 +9,9 @@ Route::get('/', function () {
 });
 
 Route::get('/login', fn () => view('auth.login'))->name('login');
+
+// middleware
+// Route::middleware('web')->group(function(){
+   
+//     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+// });

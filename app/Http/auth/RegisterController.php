@@ -10,7 +10,4 @@ class registercontroller extends Controller
         return view (auth.register);
     }
 
-    public function hwew(){
-
-    }
 }
