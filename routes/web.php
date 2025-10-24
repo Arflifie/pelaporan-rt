@@ -8,8 +8,5 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/login', [LoginController::class, 'show']) -> name('login');
-Route::post('/login', [LoginController::class, 'login']);
-
-Route::get('/register', [RegisterController::class, 'show']) ->name('register');
-Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/login', fn () => view('auth.login'))->name('login');
+Rpute::post('/login', fn ())
