@@ -9,4 +9,3 @@ Route::get('/', function () {
 });
 
 Route::get('/login', fn () => view('auth.login'))->name('login');
-Rpute::post('/login', fn ())
