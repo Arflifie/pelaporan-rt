@@ -29,12 +29,11 @@
             @enderror
             </div>
             <div class="mt-15 text-center">
-                <button href="{route('/dashboard')}" type="submit" 
+                <button type="submit" 
                 class="bg-green-600 w-40 py-2.5 !rounded-2xl !no-underline !text-xl font-bold text-white transition duration-300 ease-in-out hover:bg-green-800 hover:scale-110"
                 >Login</button>
             </div>
         </form>
     </div>
 </div>
-    
 @endsection
