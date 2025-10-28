@@ -1,8 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.layoutunregis')
 @section('content')
-     <div class="text-blue-600 text-center">
-        selamat datang di website
-     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="h-min-screen">
+      <h1>Selamat datang di Dashboard</h1>
+    </div>
 @endsection
