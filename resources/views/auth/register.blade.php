@@ -23,7 +23,7 @@
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">Nomor Telepon</label><br>
-                <input type="number" id=nomor_telepon name="nomor_telepon" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="number" id="phone" name="phone" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">email</label>
