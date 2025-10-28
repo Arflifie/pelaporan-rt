@@ -19,7 +19,7 @@
             @csrf
             <div>
                 <label for="" class=" text-white">Nama Lengkap</label><br>
-                <input type="text" id="namalengkap" name="namalengkap" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="text" id="name" name="name" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">Nomor Telepon</label><br>

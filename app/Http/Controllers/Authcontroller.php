@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Authcontroller extends Controller
 {
@@ -28,19 +30,19 @@ class Authcontroller extends Controller
 
     public function register(Request $request){
         $request->validate([
-            'namalengkap' => 'required|string|max: 225',
-            'nomor-telepon' => 'required|numeric|max: 14',
-            'email' => 'required|email|max: 40',
-            'password' => 'required|confirmed|max: 20',
+            'name' => 'required|string|max:225',
+            'nomor-telepon' => 'required|numeric|digits_between:10,14',
+            'email' => 'required|email|max:40|unique:users',
+            'password' => 'required|confirmed|min:8|max:20',
         ]);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => hash::make($request->password),
+            'password' => Hash::make($request->password),
         ]);
         Auth::login($user);
 
-        return redirect()->route('login');
+        return redirect('/login');
     }
     public function messages(){
         return [
