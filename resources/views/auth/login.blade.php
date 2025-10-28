@@ -12,20 +12,28 @@
         <div class="mb-8 text-center">
             <span class="text-white text-3xl italic">Login</span>
         </div>
-        <form action="/login" method="POST">
+        @if (session('failed'))
+            <div class="bg-red-500 text-white px-4 py-3 rounded-lg 
+            relative mb-4" role="alert">
+                <span class="block sm:inline">
+                    {{session('failed')}}
+                </span></div>
+        @endif
+            
+        <form action="/login" method="POST" novalidate>
             @csrf
             <div>
                 <label for="" class="font-bold text-white">email</label><br>
                 <input type="email" id="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
                 @error('email')
-                <small class="text-red-600">{{$message}}</small>
+                <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
                 @enderror
             </div>
             <div class="mt-3">
                 <label for="" class="text-white font-bold">Password</label><br>
                 <input type="password" id="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
                 @error('password')
-                <small class="text-red-600">{{$message}}</small>
+                <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
             @enderror
             </div>
             <div class="mt-15 text-center">

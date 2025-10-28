@@ -12,6 +12,11 @@
         <div class="mb-8 text-center">
             <span class="text-white text-3xl italic">Register</span>
         </div>
+        @if(@session('failed')
+            <div class="alert alert-danger">{{session('failed')}}</div>
+        @endif
+            
+        @endsession)
         <form action="" method="POST">
             @csrf
             <div>
