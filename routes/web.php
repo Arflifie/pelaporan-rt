@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/login', fn () => view('auth.login'))->name('login');
 Route::get('/register', fn () => view('auth.register')) -> name('register');
 Route::post('/login', [Authcontroller::class, 'login']);
+Route::post('/register', [Authcontroller::class, 'register']);
 
 Route::get('/home', [HomeController::class, 'home']);
 

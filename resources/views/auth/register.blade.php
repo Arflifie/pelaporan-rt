@@ -12,33 +12,38 @@
         <div class="mb-8 text-center">
             <span class="text-white text-3xl italic">Register</span>
         </div>
-        @if(@session('failed')
-            <div class="alert alert-danger">{{session('failed')}}</div>
-        @endif
-            
-        @endsession)
-        <form action="" method="POST">
+        {{-- @if(session('failed'))
+            <div class="">{{session('failed')}}</div>
+        @endif --}}
+        <form action="/register" method="POST">
             @csrf
             <div>
                 <label for="" class=" text-white">Nama Lengkap</label><br>
-                <input type="text" name="namalengkap" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="text" id="namalengkap" name="namalengkap" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">Nomor Telepon</label><br>
-                <input type="number" name="nomor-telepon" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="number" id=nomor-telepon name="nomor-telepon" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">email</label>
-                <input type="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="email" id="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class="text-white ">Password</label>
-                <input type="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="password" id="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+            </div>
+            <div class="mt-3">
+                <label for="" class="text-white ">Konfirmasi Password</label>
+                <input type="password" id="password" name="password_confirmation" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-15 text-center">
-                <button href="{route('/login')}" type="submit" 
+                <button type="submit" 
                 class="bg-green-600 w-40 py-2 !rounded-2xl !no-underline text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-green-700 hover:scale-110"
                 >Daftar</button>
+                @error('email')
+                <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
+                @enderror
             </div>
         </form>
     </div>

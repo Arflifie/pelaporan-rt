@@ -14,7 +14,7 @@ class Authcontroller extends Controller
         ],[
             'email.required' => 'harap masukkan password',
             'email.email' => 'email tidak valid',
-            'email.max' => 'email terlalu panjang, maksimal 20 karakter',
+            'email.max' => 'email terlalu panjang, maksimal 40 karakter',
 
 
             'password.required' => 'harap masukkan password',
@@ -24,5 +24,27 @@ class Authcontroller extends Controller
             return redirect('/home');
         }
         return back()->with('failed', 'Email dan password salah');
+    }
+
+    public function register(Request $request){
+        $request->validate([
+            'namalengkap' => 'required|string|max: 225',
+            'nomor-telepon' => 'required|numeric|max: 14',
+            'email' => 'required|email|max: 40',
+            'password' => 'required|confirmed|max: 20',
+        ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => hash::make($request->password),
+        ]);
+        Auth::login($user);
+
+        return redirect()->route('login');
+    }
+    public function messages(){
+        return [
+            'password.confirmed' => 'Konfirmasi Password tidak cocok',
+        ];
     }
 }
