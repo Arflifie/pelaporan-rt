@@ -12,8 +12,8 @@
 
     {{-- tailwindcss --}}
     @vite('resources/css/app.css')
-  </head>
-  <body>
+  </head class="bg-stone-100 font-sans text-gray-800">
+  <body class="bg-stone-100 font-sans text-gray-800">
     @include('layouts.navregis')
     <div class: container>
       @yield(section: 'content')

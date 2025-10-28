@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beranda - SiagaRT</title>
-  @vite('resources/css/app.css')
-</head>
-<body class="bg-stone-100 font-sans text-gray-800">
-
-  <!-- Wrapper -->
+@extends('layouts.layout')
+@section('content')
+<!-- Wrapper -->
   <div class="min-h-screen flex flex-col items-center">
 
     <!-- HEADER -->
-    <header class="w-full bg-amber-400 rounded-b-[60px] text-white py-12 px-6 relative shadow-md">
+    <header class="w-full bg-yellow-500 rounded-b-[60px] text-white py-12 px-6 relative shadow-md">
       <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
-
-        <!-- Menu Icon -->
-        <div class="absolute left-6 top-6 flex flex-col gap-1 cursor-pointer">
-          <span class="block w-8 h-[3px] bg-white rounded"></span>
-          <span class="block w-6 h-[3px] bg-white rounded"></span>
-          <span class="block w-8 h-[3px] bg-white rounded"></span>
-        </div>
-
-        <!-- Profil -->
-        <img src="https://placehold.co/48x48" class="absolute right-6 top-6 rounded-full border-2 border-white" />
-
-        <span class="bg-black/20 text-xs md:text-sm font-bold rounded-2xl px-4 py-1 mb-2">SiagaRT</span>
+        
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Hallo, Pak Syamsul</h1>
         <p class="text-white/90 text-sm md:text-base lg:text-lg mt-2 leading-relaxed">
           SiagaRT siap bantu jaga<br>lingkungan RT 07!
@@ -141,6 +122,5 @@
       © 2025 SiagaRT
     </footer>
   </div>
-
-</body>
-</html>
+@endsection
+/
