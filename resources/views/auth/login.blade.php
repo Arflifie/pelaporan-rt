@@ -12,15 +12,21 @@
         <div class="mb-8 text-center">
             <span class="text-white text-3xl italic">Login</span>
         </div>
-        <form action="">
+        <form action="/login" method="POST">
             @csrf
             <div>
                 <label for="" class="font-bold text-white">email</label><br>
-                <input type="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="email" id="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                @error('email')
+                <small class="text-red-600">{{$message}}</small>
+                @enderror
             </div>
             <div class="mt-3">
                 <label for="" class="text-white font-bold">Password</label><br>
-                <input type="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="password" id="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                @error('password')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
             </div>
             <div class="mt-15 text-center">
                 <button href="{route('/dashboard')}" type="submit" 

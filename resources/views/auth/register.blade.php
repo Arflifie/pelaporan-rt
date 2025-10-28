@@ -16,19 +16,19 @@
             @csrf
             <div>
                 <label for="" class=" text-white">Nama Lengkap</label><br>
-                <input type="text" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="text" name="namalengkap" required title="harap masukkan nama lengkap" placeholder="Masukkan nama lengkap" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">Nomor Telepon</label><br>
-                <input type="number" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="number" name="nomor-telepon" required title="harap masukkan nomor telepon" placeholder="Masukkan nomor telepon" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class=" text-white">email</label>
-                <input type="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-3">
                 <label for="" class="text-white ">Password</label>
-                <input type="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
+                <input type="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
             </div>
             <div class="mt-15 text-center">
                 <button href="{route('/login')}" type="submit" 
