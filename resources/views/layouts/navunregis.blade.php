@@ -1,16 +1,17 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-      </div>
-    </div>
+<nav class="flex p-4 items-center justify-between bg-orange-300">
+  <div class="font-bold text-xl">
+    <span>SiagaRT</span>
+  </div>
+  <div  class="text-white text-md bg-green-700 p-2 w-20 text-center font-bold rounded-lg
+  transition duration-200 ease-in-out hover:scale-105 hover:bg-green-950 hover:text-yellow-300">
+    <a href="{{route('login')}}" class="text-white no-underline!">
+      Login
+    </a>
+  </div>
+  <div  class="text-green-700 text-md border-2 border-green-700 p-2 w-20 text-center font-bold rounded-lg
+  transition duration-200 ease-in-out hover:scale-105 hover:bg-green-950 hover:text-yellow-300">
+    <a href="{{route('register')}}" class="text-white no-underline!">
+      Daftar
+    </a>
   </div>
 </nav>
