@@ -1,38 +1,31 @@
 @extends('layouts.layoutauth')
 @section('content')
-<div class="absolute z-0 p-60 sm:p-30 bg-blue-950 -ml-35 sm:-ml-50 -mt-20 rounded-full">
-        {{-- dekorasi1 --}}
-    </div>
-<div class="z-20 flex justify-center">
-    <form action="" class=" z-20 mt-30">
-        <h1 class="text-white text-center">SiagaRT</h1>
-        <h2 class="text-white text-center">Form Login</h2>
-        <div class="">
-            <label for="name" class="ml-2 text-xl text-white">Username</label><br>
-            <div class="">
-                <input class="py-2.5 w-110 sm:w-5 px-3 bg-white rounded-lg"
-                type="text" id="name" placeholder="masukkan username" required>
-            </div>
-        </div><br>
-        <div class="">
-            <label for="password" class="ml-2 text-xl text-white">Password</label> <br>
-            <div class="">
-                <input class=" py-2.5 w-110 px-3 bg-white rounded-lg focus:ring-2 focus:outline-none"
-                type="password" id="password" placeholder="masukkan password" required>
-            </div>
-            
-        </div> <br>
-        <div class="flex justify-center">
-            <div 
-                type="submit" class=" w-50 mt-25 text-center rounded-2xl bg-green-400 py-3 text-white hover:bg-green-700 transition-colors">
-                Login
-            </div>
+<div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+     <div class="absolute top-0 left-0 w-90 h-90 md:w-100 md:h-100 lg:w-150 lg:h-150 bg-blue-800 rounded-full -translate-x-1/4 -translate-y-1/5 opacity-80"></div>
+     <div class="absolute bottom-0 right-0 w-90 h-90  md:w-100 md:h-100 lg:w-150 lg:h-150 bg-yellow-600 rounded-full translate-x-1/3 translate-y-1/5"></div>
+   
+    <div class="w-full max-w-md relative z-10">
+        <div class="mb-9">
+            <h2 class="text-white font-bold">Selamat Datang di</h2>
+            <span class="text-white text-6xl font-bold italic">SiagaRT</span>
         </div>
-    </form>
-</div>
-    <div class="absolute z-10 p-60 bg-orange-100 -mt-50 ml-60 rounded-full">    
-        {{-- dekorasi2 --}}
+        <form action="">
+            @csrf
+            <div>
+                <label for="" class="font-bold text-white">email</label><br>
+                <input type="text" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2 rounded-lg px-3 outline-none">
+            </div>
+            <div class="mt-3">
+                <label for="" class="text-white font-bold">Password</label><br>
+                <input type="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2 rounded-lg px-3 outline-none">
+            </div>
+            <div class="mt-15 text-center">
+                <button href="{route('/dashboard')}" type="submit" 
+                class="bg-green-600 w-40 py-2 !rounded-2xl !no-underline text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-green-700 hover:scale-110"
+                >Login</button>
+            </div>
+        </form>
     </div>
-
+</div>
     
 @endsection
