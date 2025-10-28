@@ -12,6 +12,7 @@ Route::get('/login', fn () => view('auth.login'))->name('login');
 Route::get('/register', fn () => view('auth.register')) -> name('register');
 Route::post('/login', [Authcontroller::class, 'login']);
 Route::post('/register', [Authcontroller::class, 'register']);
+Route::post('/logout', [Authcontroller::class, 'logout'])->name('logout');
 
 Route::get('/home', [HomeController::class, 'home']);
 
