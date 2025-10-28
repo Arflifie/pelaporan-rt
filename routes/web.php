@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', fn () => view('auth.login'))->name('login');
-
+Route::get('/register', fn () => view('auth.register')) -> name('register');
 // middleware
 // Route::middleware('web')->group(function(){
    
