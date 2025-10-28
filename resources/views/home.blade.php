@@ -7,7 +7,7 @@
     <header class="w-full bg-yellow-500 rounded-b-[60px] text-white py-12 px-6 relative shadow-md">
       <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
         
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Hallo, Pak Syamsul</h1>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">{{Auth()->user()->name}}</h1>
         <p class="text-white/90 text-sm md:text-base lg:text-lg mt-2 leading-relaxed">
           SiagaRT siap bantu jaga<br>lingkungan RT 07!
         </p>
