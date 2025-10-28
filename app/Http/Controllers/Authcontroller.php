@@ -31,12 +31,13 @@ class Authcontroller extends Controller
     public function register(Request $request){
         $request->validate([
             'name' => 'required|string|max:225',
-            'nomor-telepon' => 'required|numeric|digits_between:10,14',
+            'nomor_telepon' => 'required|numeric|digits_between:10,14',
             'email' => 'required|email|max:40|unique:users',
             'password' => 'required|confirmed|min:8|max:20',
         ]);
         $user = User::create([
             'name' => $request->name,
+            'nomor_telepon' => $request->nomor_telepon,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
