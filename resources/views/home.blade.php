@@ -8,17 +8,17 @@
       <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
         
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">{{Auth()->user()->name}}</h1>
-        <p class="text-white/90 text-sm md:text-base lg:text-lg mt-2 leading-relaxed">
+        <p class="text-white/ text-sm md:text-base lg:text-lg mt-2 leading-relaxed">
           SiagaRT siap bantu jaga<br>lingkungan RT 07!
         </p>
       </div>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 w-full max-w-4xl px-6 py-10 flex flex-col items-center">
+    <main class="flex-1 w-full max-w-7xl px-2 py-10 flex flex-col items-center">
 
       <!-- DARURAT SECTION -->
-      <section class="text-center mb-12 min-h-screen">
+      <section class="items-center mb-12 min-h-screen">
         <h2 class="text-red-700 text-2xl md:text-3xl lg:text-4xl font-extrabold">Darurat? Tekan di Sini!</h2>
         <p class="text-gray-600 mt-2 text-sm md:text-base lg:text-lg leading-relaxed">
           Segera tekan tombol di bawah untuk melaporkan keadaan darurat!
@@ -39,7 +39,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-20">
           <!-- Polisi -->
-          <div class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition duration-200 ease-in-out hover:scale-110">
+          <div class="w-70 h-70 bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition duration-200 ease-in-out hover:scale-110">
             <div class="bg-amber-400 w-12 h-12 rounded-xl mb-3 flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 2.28-1.64 4.44-4 4.9V19h8v-3.1c-2.36-.46-4-2.62-4-4.9zM12 3c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/>
