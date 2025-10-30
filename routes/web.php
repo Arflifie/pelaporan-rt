@@ -14,5 +14,6 @@ Route::post('/login', [Authcontroller::class, 'login']);
 Route::post('/register', [Authcontroller::class, 'register']);
 Route::post('/logout', [Authcontroller::class, 'logout'])->name('logout');
 
-Route::get('/home', [HomeController::class, 'home']);
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
