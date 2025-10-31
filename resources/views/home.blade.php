@@ -1,12 +1,11 @@
 @extends('layouts.layout')
 @section('content')
 <!-- Wrapper -->
-  <div class="min-h-screen flex flex-col items-center">
+  <div class="min-h-screen flex flex-col items-center justify-center">
 
     <!-- HEADER -->
     <header class="w-full bg-yellow-500 rounded-b-[60px] text-white py-12 px-6 relative shadow-md">
       <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
-        
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">{{Auth()->user()->name}}</h1>
         <p class="text-white/ text-sm md:text-base lg:text-lg mt-2 leading-relaxed">
           SiagaRT siap bantu jaga<br>lingkungan RT 07!
@@ -16,13 +15,6 @@
 
     <!-- MAIN CONTENT -->
     <main class="flex-1 w-full max-w-7xl px-2 py-10 flex flex-col items-center">
-
-      <!-- DARURAT SECTION -->
-      <section class="items-center mb-12 min-h-screen">
-        <h2 class="text-red-700 text-2xl md:text-3xl lg:text-4xl font-extrabold">Darurat? Tekan di Sini!</h2>
-        <p class="text-gray-600 mt-2 text-sm md:text-base lg:text-lg leading-relaxed">
-          Segera tekan tombol di bawah untuk melaporkan keadaan darurat!
-        </p>
 
         <div class="mt-30 relative flex justify-center items-center">
           <div class="absolute w-80 h-80 bg-red-700/5 rounded-full hidden md:block"></div>
