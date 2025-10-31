@@ -57,7 +57,7 @@
           <div class="absolute w-64 h-64 bg-red-700/10 rounded-full hidden md:block"></div>
 
           <a href="{{ url('/pelaporan') }}" 
-            class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-red-700 rounded-full flex items-center justify-center text-white text-3xl md:text-5xl lg:text-6xl font-bold shadow-xl hover:scale-105 transition-transform cursor-pointer">
+           class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-red-700 rounded-full flex items-center justify-center text-white text-3xl md:text-5xl lg:text-6xl font-bold shadow-xl hover:scale-105 transition-transform cursor-pointer sos-animate">
             SOS
           </a>
         </div>
@@ -72,21 +72,17 @@
 
           <!-- Polisi -->
           <a href="tel:101" class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-lg transition hover:scale-[1.02] cursor-pointer">
-            <div class="bg-amber-400 w-12 h-12 rounded-xl mb-3 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 2.28-1.64 4.44-4 4.9V19h8v-3.1c-2.36-.46-4-2.62-4-4.9zM12 3c1.11 0 2 .89 2 2s-.89 2-2 2-2-.89-2-2 .89-2 2-2z"/>
-              </svg>
+            <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
+              {!! file_get_contents(public_path('icons/polisi.svg')) !!}
             </div>
             <p class="text-base md:text-lg font-bold text-gray-800">Polisi</p>
-            <p class="text-sm md:text-base font-semibold text-red-700/80">No: 101</p>
+            <p class="text-sm md:text-base font-semibold text-red-700/80">No: 110</p>
           </a>
 
           <!-- Damkar -->
           <a href="tel:113" class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-lg transition hover:scale-[1.02] cursor-pointer">
-            <div class="bg-amber-400 w-12 h-12 rounded-xl mb-3 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c0 6-4 8-4 12 0 2.21 1.79 4 4 4s4-1.79 4-4c0-4-4-6-4-12z"/>
-              </svg>
+            <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
+              {!! file_get_contents(public_path('icons/damkar.svg')) !!}
             </div>
             <p class="text-base md:text-lg font-bold text-gray-800">Damkar</p>
             <p class="text-sm md:text-base font-semibold text-red-700/80">No: 113</p>
@@ -94,21 +90,17 @@
 
           <!-- Ambulans -->
           <a href="tel:118" class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-lg transition hover:scale-[1.02] cursor-pointer">
-            <div class="bg-amber-400 w-12 h-12 rounded-xl mb-3 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6M21 12v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4h1a2 2 0 0 1 2 2z"/>
-              </svg>
+            <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
+              {!! file_get_contents(public_path('icons/ambulans.svg')) !!}
             </div>
             <p class="text-base md:text-lg font-bold text-gray-800">Ambulans</p>
-            <p class="text-sm md:text-base font-semibold text-red-700/80">No: 118</p>
+            <p class="text-sm md:text-base font-semibold text-red-700/80">No: 119</p>
           </a>
 
           <!-- Petugas RT -->
           <div class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-lg transition">
-            <div class="bg-amber-400 w-12 h-12 rounded-xl mb-3 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 0 1 9 16h6a4 4 0 0 1 3.879 1.804M15 11a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/>
-              </svg>
+            <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
+              {!! file_get_contents(public_path('icons/rt.svg')) !!}
             </div>
             <p class="text-base md:text-lg font-bold text-gray-800">Petugas RT</p>
             <p class="text-sm md:text-base font-semibold text-red-700/80">No: +62XXXXXX</p>
@@ -116,7 +108,6 @@
 
         </div>
       </section>
-
 
       <!-- HISTORI LAPORAN -->
       <section class="w-full mb-16 px-2">

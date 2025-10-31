@@ -19,3 +19,18 @@ footer a:hover {
   color: #fbbf24 !important; 
   text-decoration: none !important;
 }
+
+@keyframes pulse-sos {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); /* merah */
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px 15px rgba(220, 38, 38, 0.3);
+  }
+}
+
+.sos-animate {
+  animation: pulse-sos 1.5s infinite;
+}

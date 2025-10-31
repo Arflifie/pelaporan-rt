@@ -49,18 +49,31 @@
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 mb-2">Bukti Kejadian</label>
         <div
+          id="buktiWrapper"
           class="border border-gray-300 rounded-lg p-5 flex flex-col items-center justify-center text-center bg-white hover:border-yellow-400 transition">
-          <label for="bukti"
-            class="cursor-pointer inline-flex items-center justify-center gap-2 bg-yellow-500 text-white font-semibold px-5 py-2 rounded-2xl hover:bg-yellow-600 transition-all shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h2l1-2h12l1 2h2v11H3V7z" />
-              <circle cx="12" cy="13" r="3" />
-            </svg>
+
+          <!-- Tombol Pilih Foto -->
+          <label id="btnPilihFoto" for="bukti"
+            class="cursor-pointer inline-flex items-center gap-2 bg-yellow-500 text-white font-semibold px-5 py-2 rounded-2xl hover:bg-yellow-600 transition-all shadow-sm">
+            <span class="pointer-events-none">
+              {!! file_get_contents(public_path('icons/camera.svg')) !!}
+            </span>
             <span>Pilih Foto</span>
           </label>
-          <input type="file" id="bukti" required class="hidden">
-          <p id="fileName" class="text-sm text-gray-500 mt-3 italic"></p>
+
+          <input type="file" id="bukti" required class="hidden" accept="image/*">
+
+          <!-- Preview Gambar + Edit/Hapus -->
+          <div id="previewWrapper" class="hidden flex flex-col items-center gap-2">
+            <img id="previewBukti" class="w-40 h-40 object-cover rounded-lg" alt="Preview Bukti">
+            <div class="flex gap-2">
+              <button type="button" id="editFoto"
+                class="bg-blue-500 text-white px-4 py-1 rounded-2xl hover:bg-blue-600 transition text-sm">Edit Foto</button>
+              <button type="button" id="hapusFoto"
+                class="bg-red-500 text-white px-4 py-1 rounded-2xl hover:bg-red-600 transition text-sm">Hapus Foto</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -88,6 +101,13 @@
   const bukti = document.getElementById('bukti');
   const form = document.getElementById('laporanForm');
 
+  const btnPilihFoto = document.getElementById('btnPilihFoto');
+  const previewWrapper = document.getElementById('previewWrapper');
+  const preview = document.getElementById('previewBukti');
+  const editFoto = document.getElementById('editFoto');
+  const hapusFoto = document.getElementById('hapusFoto');
+
+  // Validasi Form
   form.addEventListener('submit', function(e) {
     e.preventDefault(); 
 
@@ -96,51 +116,18 @@
     const tanggal = form.querySelector('input[type="date"]');
     const deskripsi = form.querySelector('textarea');
 
-    if (!nama.value.trim()) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      nama.focus();
-      return;
-    }
-
-    if (!lokasi.value.trim()) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      lokasi.focus();
-      return;
-    }
-
-    if (!kategori.value) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      kategori.focus();
-      return;
-    }
-
-    if (kategori.value === 'Lainnya' && !kategoriLain.value.trim()) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      kategoriLain.focus();
-      return;
-    }
-
-    if (!tanggal.value) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      tanggal.focus();
-      return;
-    }
-
-    if (!bukti.files.length) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      bukti.focus();
-      return;
-    }
-
-    if (!deskripsi.value.trim()) {
-      alert('Harap isi formulir laporan dengan lengkap!');
-      deskripsi.focus();
-      return;
-    }
+    if (!nama.value.trim()) { alert('Harap isi formulir laporan dengan lengkap!'); nama.focus(); return; }
+    if (!lokasi.value.trim()) { alert('Harap isi formulir laporan dengan lengkap!'); lokasi.focus(); return; }
+    if (!kategori.value) { alert('Harap isi formulir laporan dengan lengkap!'); kategori.focus(); return; }
+    if (kategori.value === 'Lainnya' && !kategoriLain.value.trim()) { alert('Harap isi formulir laporan dengan lengkap!'); kategoriLain.focus(); return; }
+    if (!tanggal.value) { alert('Harap isi formulir laporan dengan lengkap!'); tanggal.focus(); return; }
+    if (!bukti.files.length) { alert('Harap isi formulir laporan dengan lengkap!'); bukti.focus(); return; }
+    if (!deskripsi.value.trim()) { alert('Harap isi formulir laporan dengan lengkap!'); deskripsi.focus(); return; }
 
     form.submit();
   });
 
+  // Kategori Lainnya
   kategori.addEventListener('change', function() {
     if (this.value === 'Lainnya') {
       kategoriLain.classList.remove('hidden');
@@ -152,10 +139,29 @@
     }
   });
 
-  const fileName = document.getElementById('fileName');
+  // Upload Bukti: tampilkan preview + tombol edit/hapus
   bukti.addEventListener('change', function() {
-    fileName.textContent = this.files.length ? `📸 ${this.files[0].name}` : '';
+    if (this.files && this.files[0]) {
+      btnPilihFoto.style.display = 'none';
+      previewWrapper.classList.remove('hidden');
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+      }
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
+
+  editFoto.addEventListener('click', function() {
+    bukti.click();
+  });
+
+  hapusFoto.addEventListener('click', function() {
+    bukti.value = '';
+    preview.src = '';
+    previewWrapper.classList.add('hidden');
+    btnPilihFoto.style.display = 'inline-flex';
   });
 </script>
-
 @endsection
