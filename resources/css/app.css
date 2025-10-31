@@ -9,3 +9,13 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+footer a {
+  color: #d1d5db !important; 
+  text-decoration: none !important;
+}
+
+footer a:hover {
+  color: #fbbf24 !important; 
+  text-decoration: none !important;
+}

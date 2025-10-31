@@ -65,9 +65,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-amber-400 text-center py-4 text-zinc-800 font-semibold text-base rounded-t-[40px] shadow-inner">
-    © {{ date('Y') }} SiagaRT 
-  </footer>
-
+    @include('layouts.footer')
+    
 </body>
 </html>
