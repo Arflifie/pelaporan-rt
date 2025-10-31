@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutauth')
 
 @section('content')
 <div class="flex justify-center items-center bg-[#f5f0ea] p-6 md:p-10 min-h-[80vh]">
@@ -165,3 +165,7 @@
   });
 </script>
 @endsection
+@section('content')
+    <div class="font-bold text-center">form pelaporan</div>
+@endsection
+
